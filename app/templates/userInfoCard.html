@@ -1,0 +1,25 @@
+<div class="panel panel-primary">
+  <div class="panel-heading"
+       ng-click="togglePanel()" >
+    Name: {{ user.name }}
+  </div>
+
+  <div class="panel-body" ng-hide="isCollasped">
+    <user-address></user-address>
+
+    <br />
+    <div ng-show="!!user.friends && user.friends.length>0">
+      <h4>Friends:</h4>
+      <ul>
+        <li ng-repeat="friend in user.friends" style="height:26px">
+          {{ friend }}
+          <remove-friend method="removeFriend(friend)"></remove-friend>
+          </li>
+      </ul>
+    </div>
+    <div ng-show="!!user.rank">Rank: {{ user.rank }}</div>
+    <button ng-show="!user.rank" 
+            class="btn btn-success" 
+            ng-click="knigthMe(user)">Knight Me</button>
+  </div>
+</div>

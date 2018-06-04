@@ -1,0 +1,11 @@
+<div ng-show="!!user.address">
+  <div ng-click="toggleAddress()">
+    <h4>Address:</h4>
+  </div>
+  <div ng-hide="isCollasped">
+    <br />
+    <div>{{ user.address.street }}</div>
+    <div>{{ user.address.city }}</div>
+    <div>{{ user.address.country }}</div>
+  </div>
+</div>

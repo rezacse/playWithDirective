@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+  <script data-require="jquery@3.0.0" data-semver="3.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+  <script data-require="bootstrap@3.3.7" data-semver="3.3.7" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script data-require="angular.js@1.7.0" data-semver="1.7.0" src="https://code.angularjs.org/1.7.0/angular.min.js"></script>
+
+  <link data-require="bootstrap@3.3.7" data-semver="3.3.7" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+</head>
+
+<body class="container" style="padding-top:30px;">
+  <!-- <div ng-controller="mainCtrl">
+    <user-info-card user="user" is-collasped="false"></user-info-card>    
+  </div> -->
+
+  <div ng-controller="decoratorCtrl">
+    <!-- <video id="vid" controls preload="none" spacebar-support event-pause="handlePause(evt)" poster="/images/poster.jpg">
+      <source src="http://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4"></source>
+      <source src="http://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4"></source>
+    </video> -->
+
+    <div>
+      Here your custom click with decorator event<br />
+      {{ data.message }}
+      <button class="btn btn-success" 
+              my-click="clickHandler(data)">My Click</button>
+    </div>    
+    <br/>
+    <user-tile user="user"> </user-tile>
+    
+    <div>
+        <div>I am't scaled {{ size }}</div>
+        <div font-scale="size">I am scaled</div>
+    
+        <input type="number" ng-model="size" />
+    </div>
+  </div>
+
+
+
+  <script src="app/app.js"></script>
+
+  <script src="app/directives/userDirective.js"></script>
+  <script src="app/directives/userAddressDirective.js"></script>
+  <script src="app/directives/removeFriendDirective.js"></script>
+  <script src="app/directives/spacebarDirective.js"></script>
+  <script src="app/directives/eventPauseDirective.js"></script>
+  <script src="app/directives/myClickDirective.js"></script>
+  <script src="app/directives/userTileDirective.js"></script>
+  <script src="app/directives/userClickSelectDirective.js"></script>
+  <script src="app/directives/fontScaleDirective.js"></script>
+
+  <script src="app/controllers/mainController.js"></script>
+  <script src="app/controllers/decoratorDirectiveController.js"></script>
+</body>
+
+</html>

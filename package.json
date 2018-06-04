@@ -1,0 +1,27 @@
+{
+  "name": "angulaJSDirective",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node_modules/.bin/lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rezacse/playWithDirective.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rezacse/playWithDirective/issues"
+  },
+  "homepage": "https://github.com/rezacse/playWithDirective#readme",
+  "dependencies": {
+    "angular": "^1.7.0"
+  },
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  }
+}
