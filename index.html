@@ -2,32 +2,47 @@
 <html ng-app="app">
 
 <head>
-  <script data-require="jquery@3.0.0" data-semver="3.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
-  <script data-require="bootstrap@3.3.7" data-semver="3.3.7" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script data-require="angular.js@1.7.0" data-semver="1.7.0" src="https://code.angularjs.org/1.7.0/angular.min.js"></script>
 
-  <link data-require="bootstrap@3.3.7" data-semver="3.3.7" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="libs/css/bootstrap.min.3.3.7.css" />
   <link rel="stylesheet" href="css/style.css" />
 
 </head>
 
-<body class="container" style="padding-top:30px;">
-  <!-- <div ng-controller="mainCtrl">
-    <user-info-card user="user" is-collasped="false"></user-info-card>    
-  </div> -->
+<!-- <body class="container" style="padding-top:30px;" ng-controller="mainCtrl"> -->
+    <!-- <h2>Model Demo</h2>
+    <a ng-click="openModal()">Open Modal</a>
 
-  <div ng-controller="decoratorCtrl">
-    <!-- <video id="vid" controls preload="none" spacebar-support event-pause="handlePause(evt)" poster="/images/poster.jpg">
+    <modal open="modalOpen" options="{top:35, height:300}" on-close="closedModal(response)">
+      <div class="panel panel-primary" ng-controller="modalCtrl">
+        <div class="panel-heading">Are you sure?</div>
+        <div class="panel-body">
+          <div class="btn btn-success" ng-click="close('yes')">Yes</div>
+          <div class="btn btn-success" ng-click="close('no')">No</div>
+        </div>
+      </div>
+    </modal> -->
+
+  <body class="container" style="padding-top:30px;">
+    
+  <div ng-controller="mainCtrl">
+    <person-info-card person="person" collapsed="true"></person-info-card>   
+    <person-info-card person="person1" collapsed="false"></person-info-card>     
+    <droid-info-card droid="droid" collapsed="false"></droid-info-card>
+    
+    <video id="vid" controls preload="none" spacebar-support event-pause="handlePause(evt)" poster="/images/poster.jpg">
       <source src="http://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4"></source>
       <source src="http://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4"></source>
-    </video> -->
+    </video> 
+  </div> 
 
+  <!-- <div ng-controller="decoratorCtrl">
     <div>
       Here your custom click with decorator event<br />
       {{ data.message }}
       <button class="btn btn-success" 
               my-click="clickHandler(data)">My Click</button>
-    </div>    
+    </div>  
+
     <br/>
     <user-tile user="user"> </user-tile>
     
@@ -37,13 +52,118 @@
     
         <input type="number" ng-model="size" />
     </div>
+  </div> -->
+
+  <!-- <div ng-controller="transcludeCtrl" class="container">
+      <display-box>
+          <div>This is content inside</div>
+          <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+          </ul>
+          <div>{{ message }}</div>
+        </display-box>
+
+        <div>
+          <h1>Questions</h1>
+
+          <my-question q="Where is the rebel base?">
+            <input type="text" ng-model="answers.baseLocation"/>
+          </my-question>
+
+          <br />
+          <my-question q="Are you my mother?">
+              <input type="radio" ng-value="true" ng-model="answers.brother"/> Yes
+              <input type="radio" ng-value="false" ng-model="answers.brother"/> No
+          </my-question>
+        </div>
+  </div> -->
+
+  <!-- <div ng-controller="strTransCtrl"> -->
+  <!--<div>
+       <h2>Structure Transclude</h2>
+    <div my-transclude>
+      <div ng-repeat="item in items">
+        {{item}}
+      </div>
+    </div> 
+    </div>-->
+
+  <!--<div>
+      <h2>Lazy Loading Transclude</h2>
+      <div my-lazy-render="showit" echo>
+        <div ng-repeat="item in items">
+          {{item}}
+        </div>      
+      </div>
+      <button class="btn btn-primary" ng-click="showit=true">Render</button>  
+   </div>-->
+
+  <!-- <div>
+    <h2>Deep ng-repeat</h2>
+      <div user-list="hunter in bountyHunters">
+        <span>Age: {{hunter.age}}</span>
+      </div> 
+
+    <button class="btn btn-primary" ng-click="add()">Add</button> 
+    <button class="btn btn-error" ng-click="remove()">Remove</button> 
   </div>
+  </div> -->
+
+  <!-- <div>
+  <h2>Nested Directive</h2>
+  <grand-parent>
+    <parent>
+      <child></child>
+    </parent>
+  </grand-parent>
+</div> -->
+
+  <!-- 
+  <div>
+    <h2>Tabs Directive</h2>
+    <sw-tabstrip>
+      <sw-pane title="Game of Thrones">
+        <h4>Rating : 9.0</h4>
+      </sw-pane>
+      <sw-pane title="Inception">
+        <h4>Rating : 8.0</h4>
+      </sw-pane>
+      <sw-pane title="Titanic">
+        <h4>Rating : 8.5</h4>
+      </sw-pane>
+    </sw-tabstrip>
+  </div> 
+-->
+
+  <!-- <div ng-controller="comDirCtrl">
+  <h2>Communcation between Directives</h2>
+  <div class="row">
+    <div class="col-xs-4">
+      <master-users data="users">
+
+      </master-users>
+    </div>
+    
+    <div class="col-xs-8">
+      <detail-users data="users">
+
+      </detail-users>
+    </div>
+  </div>
+</div> -->
 
 
+
+  <!--STAR LIBS-->
+  <script src="libs/js/jquery-3.0.0.js"></script>
+  <script src="libs/js/bootstrap.min.3.3.7.js"></script>
+  <script src="libs/js/angular.min.1.7.0.js"></script>
 
   <script src="app/app.js"></script>
 
-  <script src="app/directives/userDirective.js"></script>
+  <!--STAR DIRECTIVES-->
+  <script src="app/directives/personDirective.js"></script>
   <script src="app/directives/userAddressDirective.js"></script>
   <script src="app/directives/removeFriendDirective.js"></script>
   <script src="app/directives/spacebarDirective.js"></script>
@@ -52,9 +172,34 @@
   <script src="app/directives/userTileDirective.js"></script>
   <script src="app/directives/userClickSelectDirective.js"></script>
   <script src="app/directives/fontScaleDirective.js"></script>
+  <script src="app/directives/stateDisplayDirective.js"></script>
+  <script src="app/directives/displayBoxDirective.js"></script>
+  <script src="app/directives/myQuestionDirective.js"></script>
+  <script src="app/directives/droidDirective.js"></script>
+  <script src="app/directives/userPanelDirective.js"></script>
+  <script src="app/directives/myTranscludeDirective.js"></script>
+  <script src="app/directives/myLazyRenderDirective.js"></script>
+  <script src="app/directives/myRepeatDirective.js"></script>
+  <script src="app/directives/nestedDirective.js"></script>
+  <script src="app/directives/tabDirective.js"></script>
+  <script src="app/directives/masterUserDirective.js"></script>
+  <script src="app/directives/detailUsrsDirective.js"></script>
+  <script src="app/directives/modalDirective.js"></script>
 
+  <!--STAR SERVICES-->
+  <script src="app/services/knightPolicy.js"></script>
+  <script src="app/services/userListStateService.js"></script>
+
+  <!--STAR CONTROLLERS-->
   <script src="app/controllers/mainController.js"></script>
   <script src="app/controllers/decoratorDirectiveController.js"></script>
+  <script src="app/controllers/transcludeController.js"></script>
+  <script src="app/controllers/structureTranscludeController.js"></script>
+  <script src="app/controllers/nestedDirectiveController.js"></script>
+  <script src="app/controllers/tabController.js"></script>
+  <script src="app/controllers/communicateDirecitveController.js"></script>
+  <script src="app/controllers/modalController.js"></script>
+
 </body>
 
 </html>

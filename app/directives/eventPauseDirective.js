@@ -5,7 +5,7 @@
         return {
             restrict: 'A',
             link: function(scope, el, attrs) {
-                var func = $parse(attrs['eventPause']);
+                var func = $parse(attrs.eventPause);
                 el.on('pause', function(event){
                     scope.$apply(function(){
                         func(scope, {evt: event});

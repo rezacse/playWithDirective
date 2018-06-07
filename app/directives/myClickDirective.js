@@ -4,7 +4,7 @@
     var myClick = function($parse) {
         return {
             link: function(scope, el, attrs){
-                var func = $parse(attrs['myClick']);
+                var func = $parse(attrs.myClick);
                 el.on('click', function(){
                     scope.$apply(function(){
                         func(scope);
